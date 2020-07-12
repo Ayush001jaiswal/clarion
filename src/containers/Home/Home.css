@@ -27,3 +27,8 @@
 .Navbar .login-align {
   float: right;
 }
+
+.home-email {
+  text-align: right;
+  margin: 20px;
+}

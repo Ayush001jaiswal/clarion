@@ -9,12 +9,15 @@ class Home extends Component {
   	    super(props);
   	    
   	    this.state = {
-  		    isLogin: false
+  		    isLogin: false,
+  		    authEmail: ''
   		}
   	}
 
   	getLoginEmail = (email) => {
-  		this.setState({isLogin: true});
+  		var emailArray = email.split("@");  
+  		let name = emailArray[0];
+  		this.setState({isLogin: true, authEmail:name });
   	}	
 
     render() { 
@@ -27,12 +30,18 @@ class Home extends Component {
 	          		}	
 	          	</div>
 	          
-	          	
+	          	{this.state.isLogin === true ? 
+	          		 	<div>
+	          				<p className="home-email">Hello {this.state.authEmail} </p>
+	          			</div> : ''
+	          	} 
 	          	<Switch>
-	          		<Route path="/home">
-	              		<Product />
-	            	</Route>  
-	           		 	
+	          		{this.state.isLogin === true ?
+	          			<Route path="/home" exact>
+	              			<Product />
+	            		</Route> : '' 
+	           		} 	
+	            	
 	            	<Route path="/login">
 	              		<Login getLoginEmail = {this.getLoginEmail} />
 	            	</Route> 

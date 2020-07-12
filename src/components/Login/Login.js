@@ -17,10 +17,8 @@ const Login = (props) =>  {
 		const userEmail = 'Clarion@clarion.com';
 		const userPassword = 'Clarion123';		
 		if(userEmail === email && userPassword === password ) {
-			//localStorage.setItem("token", id)
 			props.getLoginEmail(email);
 			setRedirect(true);
-
 		} else {
 			setError(true);
 		}
@@ -31,7 +29,7 @@ const Login = (props) =>  {
 		const field = target.name;
 		const value = target.value;
 		switch(field) {
-			case 'email':
+				case 'email':
 				setEmail(value);
 			break;
 
@@ -64,7 +62,9 @@ const Login = (props) =>  {
 	        				<Col><input type="password" onChange={handleChange} name="password" id="password" 
 	        					placeholder="Enter your password."/></Col>
 	        			</Row>
+	        			<FormText>{errorMessage}</FormText>
 					</FormGroup>
+
 					<Button>Login</Button>
 				</Container>
 			</Form>

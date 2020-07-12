@@ -63,8 +63,8 @@ const Login = (props) =>  {
 	        					placeholder="Enter your password."/></Col>
 	        			</Row>
 	        			<FormText>{errorMessage}</FormText>
+				
 					</FormGroup>
-
 					<Button>Login</Button>
 				</Container>
 			</Form>

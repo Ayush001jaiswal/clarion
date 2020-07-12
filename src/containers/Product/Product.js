@@ -29,11 +29,11 @@ class Product extends Component {
       }
       const index = updateProductData.indexOf(data); 
       updateProductData[index] = updateProductObject;
+      console.log(updateProductData);
       this.setState({products: updateProductData});
     }
 
-    deleteProduct = (event, id) => {
-      event.PreventDefault()
+    deleteProduct = (id) => {
       const newProducts = [ ...this.state.products ];
       const updateProducts = newProducts.filter((value, key) => {
           return value.id !== id
@@ -53,12 +53,10 @@ class Product extends Component {
       this.setState({products: newProductData});
     }
 
-    handleChange = () => {
-      console.log("dd")
-    }
-  
-    render() { 
-  	  const productList = this.state.products.map((value, key) => {
+    
+    render() {
+      
+      const productList = this.state.products.map((value, key) => {
           return (
               <tr key={key}>
                 <td>{value.id}</td>
@@ -66,16 +64,17 @@ class Product extends Component {
                 <td>{value.rate}</td>
                 <td>{value.quantity}</td>
                 <td><input type="submit" onClick={this.deleteProduct.bind(this, value.id)} value="DELETE" /></td>
+                
                 <AddProduct 
                   addProductHandler = {this.addProductHandler} 
                   product_name = {this.product_name}
                   product_rate = {this.product_rate}
                   product_quantity = {this.product_quantity}
                 />
+
                 <EditProduct 
                   editValue = {value} 
                   editProductHandler = {this.editProductHandler.bind(this, value)} 
-                  handleChange ={this.handleChange}
                   product_name = {this.product_name}
                   product_rate = {this.product_rate}
                   product_quantity = {this.product_quantity}

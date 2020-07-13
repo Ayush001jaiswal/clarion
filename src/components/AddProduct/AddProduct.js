@@ -37,14 +37,14 @@ const AddProduct = (props) =>  {
 	        		<FormGroup>
 	        			<Row>
 	        				<Col><input type="text"  name="product_rate" id="product_rate" 
-	        					ref={props.product_rate} placeholder="Enter the rate."/></Col>
+	        					ref={props.product_rate} placeholder="Enter the rate." /></Col>
 	        			</Row>
 					</FormGroup>
 
 					<FormGroup>
 	        			<Row>
 	        				<Col><input type="number"  name="product_quantity" id="product_quantity" 
-	        					ref={props.product_quantity} placeholder="Enter the quantity."/></Col>
+	        					ref={props.product_quantity} placeholder="Enter the quantity." /></Col>
 	        			</Row>
 					</FormGroup>			
 				</Container>

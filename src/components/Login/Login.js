@@ -52,15 +52,15 @@ const Login = (props) =>  {
 					<hr/>
 					<FormGroup>
 	   			   		<Row>
-							<Col><input type="text" onChange={handleChange} name="email" id="email"  
-						    	placeholder="Enter your email address" /></Col>
+							<Col><input type="email" onChange={handleChange} name="email" id="email"  
+						    	placeholder="Enter your email address" required="required" /></Col>
 						</Row>
 					</FormGroup>
 
 	        		<FormGroup>
 	        			<Row>
 	        				<Col><input type="password" onChange={handleChange} name="password" id="password" 
-	        					placeholder="Enter your password."/></Col>
+	        					placeholder="Enter your password."  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required"/></Col>
 	        			</Row>
 	        			<FormText>{errorMessage}</FormText>
 				

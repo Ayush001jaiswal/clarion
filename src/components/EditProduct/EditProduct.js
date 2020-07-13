@@ -40,7 +40,7 @@ const EditProduct = (props) =>  {
 
 		        		<FormGroup>
 		        			<Row>
-		        				<Col><input type="text"  ref={props.product_rate} 
+		        				<Col><input type="text" ref={props.product_rate} 
 		        					name="product_rate" placeholder={props.editValue.rate} />
 		        				</Col>
 		        			</Row>
@@ -48,7 +48,7 @@ const EditProduct = (props) =>  {
 
 						<FormGroup>
 		        			<Row>
-		        				<Col><input type="number"  name="product_quantity" placeholder={props.editValue.quantity} ref={props.product_quantity} /></Col>
+		        				<Col><input type="number" name="product_quantity" placeholder={props.editValue.quantity} ref={props.product_quantity} /></Col>
 		        			</Row>
 						</FormGroup>
 					</Container>
